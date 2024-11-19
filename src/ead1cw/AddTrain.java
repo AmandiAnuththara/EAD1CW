@@ -85,7 +85,7 @@ public class AddTrain extends javax.swing.JFrame
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(0, 0, 153));
+        jButton1.setBackground(new java.awt.Color(102, 102, 255));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Add");
         jButton1.setName("add"); // NOI18N
