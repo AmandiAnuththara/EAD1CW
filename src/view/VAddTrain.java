@@ -1,7 +1,7 @@
-package ead1cw;
-public class AddTrain extends javax.swing.JFrame 
+package view;
+public class VAddTrain extends javax.swing.JFrame 
 {
-    public AddTrain() {
+    public VAddTrain() {
         initComponents();
     }
     @SuppressWarnings("unchecked")
@@ -182,7 +182,7 @@ public class AddTrain extends javax.swing.JFrame
         {
             public void run() 
             {
-                new AddTrain().setVisible(true);
+                new VAddTrain().setVisible(true);
             }
         });
     }
