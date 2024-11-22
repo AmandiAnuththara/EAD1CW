@@ -33,25 +33,25 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel2" alignment="0" min="-2" pref="72" max="-2" attributes="0"/>
-                          <Component id="cmd_select_from" alignment="0" min="-2" pref="99" max="-2" attributes="0"/>
+                          <Component id="cmd_from" alignment="0" min="-2" pref="99" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel3" alignment="0" min="-2" pref="72" max="-2" attributes="0"/>
-                          <Component id="cmd_select_to" alignment="0" min="-2" pref="99" max="-2" attributes="0"/>
+                          <Component id="cmd_to" alignment="0" min="-2" pref="99" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel4" alignment="0" min="-2" pref="139" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jXDatePicker1" min="-2" max="-2" attributes="0"/>
+                              <Component id="date_date" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-                              <Component id="jButton1" min="-2" pref="115" max="-2" attributes="0"/>
+                              <Component id="btn_search" min="-2" pref="167" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="71" max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
@@ -73,10 +73,10 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="cmd_select_from" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="cmd_select_to" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jXDatePicker1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cmd_from" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cmd_to" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="date_date" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btn_search" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jXPanel1" min="-2" max="-2" attributes="0"/>
@@ -86,7 +86,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JComboBox" name="cmd_select_from">
+    <Component class="javax.swing.JComboBox" name="cmd_from">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="7">
@@ -128,7 +128,7 @@
         <Property name="text" type="java.lang.String" value="To"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="cmd_select_to">
+    <Component class="javax.swing.JComboBox" name="cmd_to">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="7">
@@ -154,7 +154,7 @@
         <Property name="text" type="java.lang.String" value="Departure Date"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="btn_search">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="66" red="66" type="rgb"/>
@@ -168,10 +168,10 @@
         <Property name="text" type="java.lang.String" value="Search"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_searchActionPerformed"/>
       </Events>
     </Component>
-    <Component class="org.jdesktop.swingx.JXDatePicker" name="jXDatePicker1">
+    <Component class="org.jdesktop.swingx.JXDatePicker" name="date_date">
     </Component>
     <Container class="org.jdesktop.swingx.JXPanel" name="jXPanel1">
 
@@ -202,7 +202,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTable" name="jTable1">
+            <Component class="javax.swing.JTable" name="table">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="5" rowCount="4">

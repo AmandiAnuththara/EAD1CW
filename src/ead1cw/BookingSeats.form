@@ -30,7 +30,7 @@
                   <Component id="jLayeredPane2" max="32767" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jButton1" pref="181" max="32767" attributes="0"/>
+              <Component id="btn_book" pref="181" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -47,10 +47,9 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
-                      <Component id="jButton1" min="-2" pref="42" max="-2" attributes="0"/>
+                      <Component id="btn_book" min="-2" pref="42" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -78,12 +77,12 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel3" alignment="0" min="-2" pref="72" max="-2" attributes="0"/>
-                              <Component id="cmd_select_from" alignment="0" min="-2" pref="126" max="-2" attributes="0"/>
+                              <Component id="cmb_id" alignment="0" min="-2" pref="126" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
-                                  <Component id="jXTextField1" min="-2" pref="160" max="-2" attributes="0"/>
+                                  <Component id="txt_id_num" min="-2" pref="160" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
@@ -95,19 +94,19 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel5" alignment="0" min="-2" pref="72" max="-2" attributes="0"/>
-                              <Component id="cmd_select_from2" alignment="0" min="-2" pref="126" max="-2" attributes="0"/>
+                              <Component id="cmb_country" alignment="0" min="-2" pref="126" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel6" min="-2" pref="122" max="-2" attributes="0"/>
-                              <Component id="jXDatePicker1" min="-2" max="-2" attributes="0"/>
+                              <Component id="date_exp_date" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel9" alignment="0" min="-2" pref="122" max="-2" attributes="0"/>
-                              <Component id="jXDatePicker2" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="date_dob" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
@@ -119,9 +118,9 @@
                                   <Component id="jLabel8" min="-2" pref="178" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jXTextField2" min="-2" pref="160" max="-2" attributes="0"/>
+                                  <Component id="txt_lname" min="-2" pref="160" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="jXTextField3" min="-2" pref="178" max="-2" attributes="0"/>
+                                  <Component id="txt_fmname" min="-2" pref="178" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
@@ -138,14 +137,14 @@
                       <Group type="102" attributes="0">
                           <Component id="jLabel4" min="-2" pref="14" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jXTextField1" min="-2" max="-2" attributes="0"/>
+                          <Component id="txt_id_num" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel3" min="-2" pref="14" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="cmd_select_from" min="-2" max="-2" attributes="0"/>
+                          <Component id="cmb_id" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -155,8 +154,8 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="cmd_select_from2" max="32767" attributes="0"/>
-                      <Component id="jXDatePicker1" pref="0" max="32767" attributes="0"/>
+                      <Component id="cmb_country" max="32767" attributes="0"/>
+                      <Component id="date_exp_date" pref="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -165,13 +164,13 @@
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jXTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jXTextField3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txt_lname" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txt_fmname" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jLabel9" min="-2" pref="14" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jXDatePicker2" max="32767" attributes="0"/>
+                  <Component id="date_dob" max="32767" attributes="0"/>
                   <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -194,7 +193,7 @@
             <Property name="text" type="java.lang.String" value="ID Type"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="cmd_select_from">
+        <Component class="javax.swing.JComboBox" name="cmb_id">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="2">
@@ -215,9 +214,9 @@
             <Property name="text" type="java.lang.String" value="ID Number"/>
           </Properties>
         </Component>
-        <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField1">
+        <Component class="org.jdesktop.swingx.JXTextField" name="txt_id_num">
         </Component>
-        <Component class="javax.swing.JComboBox" name="cmd_select_from2">
+        <Component class="javax.swing.JComboBox" name="cmb_country">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="12">
@@ -256,7 +255,7 @@
             <Property name="text" type="java.lang.String" value="Expiration Date"/>
           </Properties>
         </Component>
-        <Component class="org.jdesktop.swingx.JXDatePicker" name="jXDatePicker1">
+        <Component class="org.jdesktop.swingx.JXDatePicker" name="date_exp_date">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel7">
           <Properties>
@@ -274,9 +273,9 @@
             <Property name="text" type="java.lang.String" value="First &amp; Middle Name"/>
           </Properties>
         </Component>
-        <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField2">
+        <Component class="org.jdesktop.swingx.JXTextField" name="txt_lname">
         </Component>
-        <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField3">
+        <Component class="org.jdesktop.swingx.JXTextField" name="txt_fmname">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel9">
           <Properties>
@@ -286,7 +285,7 @@
             <Property name="text" type="java.lang.String" value="Date of Birth"/>
           </Properties>
         </Component>
-        <Component class="org.jdesktop.swingx.JXDatePicker" name="jXDatePicker2">
+        <Component class="org.jdesktop.swingx.JXDatePicker" name="date_dob">
         </Component>
       </SubComponents>
     </Container>
@@ -313,7 +312,7 @@
                               <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                               <Component id="jLabel10" min="-2" pref="110" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jXTextField4" min="-2" pref="276" max="-2" attributes="0"/>
+                              <Component id="txt_con_name" min="-2" pref="276" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jLabel1" min="-2" pref="169" max="-2" attributes="0"/>
                       </Group>
@@ -321,12 +320,12 @@
                           <Group type="102" attributes="0">
                               <Component id="jLabel12" min="-2" pref="110" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jXTextField6" min="-2" pref="276" max="-2" attributes="0"/>
+                              <Component id="txt_phone" min="-2" pref="276" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <Component id="jLabel11" min="-2" pref="110" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jXTextField5" min="-2" pref="276" max="-2" attributes="0"/>
+                              <Component id="txt_email" min="-2" pref="276" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -342,17 +341,17 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel10" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
-                      <Component id="jXTextField4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txt_con_name" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel11" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
-                      <Component id="jXTextField5" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txt_email" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel12" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
-                      <Component id="jXTextField6" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txt_phone" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="14" max="32767" attributes="0"/>
               </Group>
@@ -376,7 +375,7 @@
             <Property name="text" type="java.lang.String" value="Contact Name"/>
           </Properties>
         </Component>
-        <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField4">
+        <Component class="org.jdesktop.swingx.JXTextField" name="txt_con_name">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel11">
           <Properties>
@@ -386,7 +385,7 @@
             <Property name="text" type="java.lang.String" value="Email"/>
           </Properties>
         </Component>
-        <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField5">
+        <Component class="org.jdesktop.swingx.JXTextField" name="txt_email">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel12">
           <Properties>
@@ -396,14 +395,14 @@
             <Property name="text" type="java.lang.String" value="Phone Number"/>
           </Properties>
         </Component>
-        <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField6">
+        <Component class="org.jdesktop.swingx.JXTextField" name="txt_phone">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jXTextField6ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_phoneActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="btn_book">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="66" red="66" type="rgb"/>
@@ -417,7 +416,7 @@
         <Property name="text" type="java.lang.String" value="Book"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_bookActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
