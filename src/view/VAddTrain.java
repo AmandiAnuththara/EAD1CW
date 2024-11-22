@@ -1,4 +1,6 @@
 package view;
+import controller.*;
+import java.util.*;
 public class VAddTrain extends javax.swing.JFrame 
 {
     public VAddTrain() {
@@ -25,7 +27,7 @@ public class VAddTrain extends javax.swing.JFrame
         txt_dstation = new javax.swing.JTextField();
         txt_astation = new javax.swing.JTextField();
         txt_cost = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btn_add = new javax.swing.JButton();
         date_ddate = new org.jdesktop.swingx.JXDatePicker();
         txt_ttime = new javax.swing.JTextField();
 
@@ -71,13 +73,13 @@ public class VAddTrain extends javax.swing.JFrame
 
         txt_cost.setName("travelcost"); // NOI18N
 
-        jButton1.setBackground(new java.awt.Color(102, 102, 255));
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Add");
-        jButton1.setName("add"); // NOI18N
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btn_add.setBackground(new java.awt.Color(102, 102, 255));
+        btn_add.setForeground(new java.awt.Color(255, 255, 255));
+        btn_add.setText("Add");
+        btn_add.setName("add"); // NOI18N
+        btn_add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btn_addActionPerformed(evt);
             }
         });
 
@@ -94,7 +96,7 @@ public class VAddTrain extends javax.swing.JFrame
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(txt_dstation, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btn_add, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel4)
@@ -162,7 +164,7 @@ public class VAddTrain extends javax.swing.JFrame
                     .addComponent(txt_cost, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txt_ttime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(14, 14, 14)
-                .addComponent(jButton1)
+                .addComponent(btn_add)
                 .addContainerGap())
         );
 
@@ -170,12 +172,57 @@ public class VAddTrain extends javax.swing.JFrame
     }// </editor-fold>//GEN-END:initComponents
 
     private void txt_train_noActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_train_noActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txt_train_noActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btn_addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addActionPerformed
+        try 
+        {
+            // Retrieve and validate inputs
+            int trainNo = Integer.parseInt(txt_train_no.getText().trim());
+            int noOfSeatsInTrain = Integer.parseInt(txt_seats.getText().trim());
+            Date departureDate = date_ddate.getDate();
+            String departureTime = txt_dtime.getText().trim();
+            String departureStation = txt_dstation.getText().trim();
+            String arrivalTime = txt_atime.getText().trim();
+            String arrivalStation = txt_astation.getText().trim();
+            String travelTime = txt_ttime.getText().trim();
+            double travelCost = Double.parseDouble(txt_cost.getText().trim());
+
+            // Validate the date and essential fields
+            if (departureDate == null) 
+            {
+                throw new IllegalArgumentException("Please select a valid departure date.");
+            }
+            if (departureTime.isEmpty() || departureStation.isEmpty() || arrivalStation.isEmpty()) 
+            {
+                throw new IllegalArgumentException("Departure time, departure station, and arrival station cannot be empty.");
+            }
+        
+            // Call the controller to add train schedule
+            CAddTrain addTrainController = new CAddTrain();
+            addTrainController.addTrainSchedule(trainNo, noOfSeatsInTrain, departureDate, 
+                    departureTime, departureStation, arrivalTime, arrivalStation, travelTime, travelCost);
+
+            // Show success message
+            javax.swing.JOptionPane.showMessageDialog(this, "Train schedule added successfully!", 
+                       "Success", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        } 
+        catch (NumberFormatException ex) 
+        {
+            javax.swing.JOptionPane.showMessageDialog(this, "Please enter valid numeric values for train number, seats, and cost.", 
+                "Input Error", javax.swing.JOptionPane.ERROR_MESSAGE);
+        } 
+        catch (IllegalArgumentException ex) 
+        {
+            javax.swing.JOptionPane.showMessageDialog(this, ex.getMessage(), 
+                "Validation Error", javax.swing.JOptionPane.ERROR_MESSAGE);
+        } 
+        catch (Exception ex) 
+        {
+            javax.swing.JOptionPane.showMessageDialog(this, "An unexpected error occurred: " + ex.getMessage(), 
+                "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btn_addActionPerformed
     public static void main(String args[]) 
     {
         java.awt.EventQueue.invokeLater(new Runnable() 
@@ -188,8 +235,8 @@ public class VAddTrain extends javax.swing.JFrame
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_add;
     private org.jdesktop.swingx.JXDatePicker date_ddate;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
