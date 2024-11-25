@@ -19,8 +19,7 @@ public class CAddTrain
 
             // Delegate to the model
             MAddTrain mtrain = new MAddTrain();
-            mtrain.addTrainSchedule(trainNo, noOfSeatsInTrain, (java.sql.Date) departureDate, departureTime, departureStation, 
-                                    arrivalTime, arrivalStation, travelTime, travelCost);
+            mtrain.addTrainSchedule(trainNo, noOfSeatsInTrain, (java.sql.Date) departureDate, departureTime, departureStation, arrivalTime, arrivalStation, travelTime, travelCost);
 
             // Log success
             System.out.println("Train schedule successfully added! Train No: " + trainNo);
@@ -33,7 +32,6 @@ public class CAddTrain
         catch(Exception e)
         {
             System.err.println("Error while adding train schedule: " + e.getMessage());
-        }
-        
+        } 
     } 
 }

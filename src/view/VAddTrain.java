@@ -3,7 +3,8 @@ import controller.*;
 import java.util.*;
 public class VAddTrain extends javax.swing.JFrame 
 {
-    public VAddTrain() {
+    public VAddTrain() 
+    {
         initComponents();
     }
     @SuppressWarnings("unchecked")
@@ -200,27 +201,22 @@ public class VAddTrain extends javax.swing.JFrame
         
             // Call the controller to add train schedule
             CAddTrain addTrainController = new CAddTrain();
-            addTrainController.addTrainSchedule(trainNo, noOfSeatsInTrain, departureDate, 
-                    departureTime, departureStation, arrivalTime, arrivalStation, travelTime, travelCost);
+            addTrainController.addTrainSchedule(trainNo, noOfSeatsInTrain, departureDate,departureTime, departureStation, arrivalTime, arrivalStation, travelTime, travelCost);
 
             // Show success message
-            javax.swing.JOptionPane.showMessageDialog(this, "Train schedule added successfully!", 
-                       "Success", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+            javax.swing.JOptionPane.showMessageDialog(this, "Train schedule added successfully!","Success", javax.swing.JOptionPane.INFORMATION_MESSAGE);
         } 
         catch (NumberFormatException ex) 
         {
-            javax.swing.JOptionPane.showMessageDialog(this, "Please enter valid numeric values for train number, seats, and cost.", 
-                "Input Error", javax.swing.JOptionPane.ERROR_MESSAGE);
+            javax.swing.JOptionPane.showMessageDialog(this, "Please enter valid numeric values for train number, seats, and cost.", "Input Error", javax.swing.JOptionPane.ERROR_MESSAGE);
         } 
         catch (IllegalArgumentException ex) 
         {
-            javax.swing.JOptionPane.showMessageDialog(this, ex.getMessage(), 
-                "Validation Error", javax.swing.JOptionPane.ERROR_MESSAGE);
+            javax.swing.JOptionPane.showMessageDialog(this, ex.getMessage(), "Validation Error", javax.swing.JOptionPane.ERROR_MESSAGE);
         } 
         catch (Exception ex) 
         {
-            javax.swing.JOptionPane.showMessageDialog(this, "An unexpected error occurred: " + ex.getMessage(), 
-                "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
+            javax.swing.JOptionPane.showMessageDialog(this, "An unexpected error occurred: " + ex.getMessage(), "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btn_addActionPerformed
     public static void main(String args[]) 

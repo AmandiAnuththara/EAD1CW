@@ -10,13 +10,9 @@ public class MAddTrain
             Statement st = DBConnection.createDBConnection().createStatement();
 
             // Insert query
-            String query = "INSERT INTO Train (Train_No, No_of_Seats_in_Train, Departure_Date, Departure_Time, " +
-                       "Departure_Station, Arrival_Time, Arrival_Station, Travel_Time, Travel_Cost) " +
-                       "VALUES ('" + trainNo + "', '" + noOfSeatsInTrain + "', '" + departureDate + "', '" + 
-                       departureTime + "', '" + departureStation + "', '" + arrivalTime + "', '" + arrivalStation + 
-                       "', '" + travelTime + "', '" + travelCost + "')";
+            String query = "INSERT INTO Train (Train_No, No_of_Seats_in_Train, Departure_Date, Departure_Time,Departure_Station, Arrival_Time, Arrival_Station, Travel_Time, Travel_Cost) VALUES ('" + trainNo + "', '" + noOfSeatsInTrain + "', '" + departureDate + "', '"+departureTime + "', '" + departureStation + "', '" + arrivalTime + "', '" + arrivalStation + "', '" + travelTime + "', '" + travelCost + "')";
         
-               // Execute the query
+            // Execute the query
             st.executeUpdate(query);
             System.out.println("Train schedule successfully added.");
         } 
