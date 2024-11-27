@@ -3,7 +3,7 @@ import java.util.Date;
 import model.*;
 public class CAddTrain 
 {
-    public void addTrainSchedule(int trainNo, int noOfSeatsInTrain, Date departureDate, String departureTime, String departureStation, String arrivalTime, String arrivalStation, String travelTime, double travelCost) 
+    public void addTrainSchedule(int trainNo, int noOfSeatsInTrain, String departureDate, String departureTime, String departureStation, String arrivalTime, String arrivalStation, String travelTime, double travelCost) 
     {
         try
         {
@@ -19,7 +19,7 @@ public class CAddTrain
 
             // Delegate to the model
             MAddTrain mtrain = new MAddTrain();
-            mtrain.addTrainSchedule(trainNo, noOfSeatsInTrain, (java.sql.Date) departureDate, departureTime, departureStation, arrivalTime, arrivalStation, travelTime, travelCost);
+            mtrain.addTrainSchedule(trainNo, noOfSeatsInTrain, departureDate, departureTime, departureStation, arrivalTime, arrivalStation, travelTime, travelCost);
 
             // Log success
             System.out.println("Train schedule successfully added! Train No: " + trainNo);

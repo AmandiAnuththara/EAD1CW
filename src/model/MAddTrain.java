@@ -2,7 +2,7 @@ package model;
 import java.sql.*;
 public class MAddTrain 
 {
-    public void addTrainSchedule(int trainNo, int noOfSeatsInTrain, Date departureDate, String departureTime, String departureStation, String arrivalTime, String arrivalStation, String travelTime, double travelCost) 
+    public void addTrainSchedule(int trainNo, int noOfSeatsInTrain, String departureDate, String departureTime, String departureStation, String arrivalTime, String arrivalStation, String travelTime, double travelCost) 
     {
         try 
         {

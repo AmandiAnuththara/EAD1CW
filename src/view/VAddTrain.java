@@ -1,5 +1,6 @@
 package view;
 import controller.*;
+import java.text.SimpleDateFormat;
 import java.util.*;
 public class VAddTrain extends javax.swing.JFrame 
 {
@@ -181,7 +182,15 @@ public class VAddTrain extends javax.swing.JFrame
             // Retrieve and validate inputs
             int trainNo = Integer.parseInt(txt_train_no.getText().trim());
             int noOfSeatsInTrain = Integer.parseInt(txt_seats.getText().trim());
-            Date departureDate = date_ddate.getDate();
+            
+            // Format departure date to 'yyyy-MM-dd'
+            Date selectedDate = date_ddate.getDate();
+            if (selectedDate == null) {
+                throw new IllegalArgumentException("Please select a valid departure date.");
+            }
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            String departureDate = dateFormat.format(selectedDate);
+        
             String departureTime = txt_dtime.getText().trim();
             String departureStation = txt_dstation.getText().trim();
             String arrivalTime = txt_atime.getText().trim();

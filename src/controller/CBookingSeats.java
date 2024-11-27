@@ -3,7 +3,7 @@ import java.util.Date;
 import model.MBookingSeats;
 public class CBookingSeats 
 {
-    public void bookingSeats(String idType, String idNumber, String country, Date expDate, String lastName, String firstMiddleName, Date dob, String email, String phoneNo) {
+    public void bookingSeats(String idType, String idNumber, String country, String expDate, String lastName, String firstMiddleName, String dob, String email, String phoneNo) {
         try 
         {
             // Validate inputs
@@ -13,7 +13,8 @@ public class CBookingSeats
                 lastName == null || lastName.isEmpty() ||
                 firstMiddleName == null || firstMiddleName.isEmpty() ||
                 email == null || email.isEmpty() ||
-                phoneNo == null || phoneNo.isEmpty()) {
+                phoneNo == null || phoneNo.isEmpty()) 
+            {
                 throw new IllegalArgumentException("All fields must be filled out!");
             }
 

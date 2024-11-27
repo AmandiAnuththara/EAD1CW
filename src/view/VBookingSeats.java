@@ -1,5 +1,6 @@
 package view;
 import controller.*;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 public class VBookingSeats extends javax.swing.JFrame 
 {
@@ -291,11 +292,27 @@ public class VBookingSeats extends javax.swing.JFrame
              // Retrieve and validate inputs
             String idType = (String) cmb_id.getSelectedItem(); 
             String idNumber = txt_id_num.getText().trim(); // Keep idNumber as String first to validate empty input
-            String country = (String) cmb_country.getSelectedItem();
-            Date expirationDate = date_exp_date.getDate(); 
+            String country = (String) cmb_country.getSelectedItem(); 
+            
+            // Format departure date to 'yyyy-MM-dd'
+            Date selectedDate = date_exp_date.getDate();
+            if (selectedDate == null) {
+                throw new IllegalArgumentException("Please select a valid departure date.");
+            }
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            String expirationDate = dateFormat.format(selectedDate);
+            
             String lastName = txt_lname.getText().trim();
             String firstMiddleName = txt_fmname.getText().trim();
-            Date dob = date_dob.getDate(); 
+            
+            // Format departure date to 'yyyy-MM-dd'
+            Date dob = date_dob.getDate();
+            if (selectedDate == null) {
+                throw new IllegalArgumentException("Please select a valid departure date.");
+            }
+            SimpleDateFormat dateFormat2 = new SimpleDateFormat("yyyy-MM-dd");
+            String date_of_birth = dateFormat2.format(dob);
+            
             String email = txt_email.getText().trim();
             String phoneNo = txt_phone.getText().trim();// Keep phoneNumber as String first to validate empty input
             //
@@ -322,7 +339,7 @@ public class VBookingSeats extends javax.swing.JFrame
          
             // Call the controller to book seats
             CBookingSeats bookingController = new CBookingSeats();
-            bookingController.bookingSeats(idType, idNumber, country, expirationDate, lastName, firstMiddleName, dob, email, phoneNo);
+            bookingController.bookingSeats(idType, idNumber, country, expirationDate, lastName, firstMiddleName,date_of_birth , email, phoneNo);
 
             // Show success message
             javax.swing.JOptionPane.showMessageDialog(this, "Booking completed successfully!", "Success", javax.swing.JOptionPane.INFORMATION_MESSAGE);

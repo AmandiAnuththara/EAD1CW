@@ -4,7 +4,7 @@ import java.util.Date;
 public class MBookingSeats 
 {
 
-    public void bookingSeats(String idType, String idNumber, String country, Date expDate, String lastName, String firstMiddleName, Date dob, String email, String phoneNo) 
+    public void bookingSeats(String idType, String idNumber, String country, String expDate, String lastName, String firstMiddleName, String dob, String email, String phoneNo) 
     {
         Connection connection = null;
         PreparedStatement ps = null;
@@ -15,15 +15,15 @@ public class MBookingSeats
 
             // Prepare the insert query
             String query = "INSERT INTO User (ID_Type, ID_Number, Expiration_Date, English_Last_Name, English_First_and_Middle_Name, Date_of_Birth, Country, Phone_no, Email) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
-            ps = connection.prepareStatement(query);
+            ps = connection.prepareStatement(query);         
 
             // Set query parameters
             ps.setString(1, idType);
             ps.setString(2, idNumber);
-            ps.setDate(3, expDate != null ? new java.sql.Date(expDate.getTime()) : null);
+            ps.setString(3, expDate );
             ps.setString(4, lastName);
             ps.setString(5, firstMiddleName);
-            ps.setDate(6, dob != null ? new java.sql.Date(dob.getTime()) : null);
+            ps.setString(6, dob);
             ps.setString(7, country);
             ps.setString(8, phoneNo);
             ps.setString(9, email);
