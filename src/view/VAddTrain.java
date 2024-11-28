@@ -171,6 +171,7 @@ public class VAddTrain extends javax.swing.JFrame
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void txt_train_noActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_train_noActionPerformed
@@ -185,7 +186,8 @@ public class VAddTrain extends javax.swing.JFrame
             
             // Format departure date to 'yyyy-MM-dd'
             Date selectedDate = date_ddate.getDate();
-            if (selectedDate == null) {
+            if (selectedDate == null) 
+            {
                 throw new IllegalArgumentException("Please select a valid departure date.");
             }
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");

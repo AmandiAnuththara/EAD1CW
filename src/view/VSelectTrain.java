@@ -160,53 +160,56 @@ public class VSelectTrain extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_searchActionPerformed
-        
         String From = cmd_from.getSelectedItem().toString();
         String To = cmd_to.getSelectedItem().toString();
-        
-        
+                
         // Format departure date to 'yyyy-MM-dd'
-            Date selectedDate = date_date.getDate();
-            if (selectedDate == null) {
-                throw new IllegalArgumentException("Please select a valid departure date.");
+        Date selectedDate = date_date.getDate();
+        if (selectedDate == null) 
+        {
+            throw new IllegalArgumentException("Please select a valid departure date.");
+        }
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        String departureDate = dateFormat.format(selectedDate);
+        
+        try 
+        {
+            CSelectTrain controller = new CSelectTrain();
+            List<Object[]> trainDetails = controller.getTrainDetails(From,To,departureDate);
+        
+            // Define column names for the table
+            String[] columnNames = {"Train Number", "Travel Time", "Departure Date", "Departure Time", "Arrival Time", "Travel Cost"};
+
+            // Create a table model with the train details
+            javax.swing.table.DefaultTableModel tableModel = new javax.swing.table.DefaultTableModel(columnNames, 0);
+
+            // Add rows to the table model
+            for (Object[] row : trainDetails) 
+            {
+                tableModel.addRow(row);
             }
-            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-            String departureDate = dateFormat.format(selectedDate);
-        
-        try {
-        CSelectTrain controller = new CSelectTrain();
-        List<Object[]> trainDetails = controller.getTrainDetails(From,To,departureDate);
-        
-        // Define column names for the table
-        String[] columnNames = {"Train Number", "Travel Time", "Departure Date", "Departure Time", "Arrival Time", "Travel Cost"};
 
-        // Create a table model with the train details
-        javax.swing.table.DefaultTableModel tableModel = new javax.swing.table.DefaultTableModel(columnNames, 0);
+            // Set the updated table model
+            table.setModel(tableModel);
 
-        // Add rows to the table model
-        for (Object[] row : trainDetails) {
-            tableModel.addRow(row);
-        }
-
-        // Set the updated table model
-        table.setModel(tableModel);
-
-        // Show a message if no trains were found
-        if (trainDetails.isEmpty()) {
-            javax.swing.JOptionPane.showMessageDialog(this, "No trains found for the selected criteria.", "Info", javax.swing.JOptionPane.INFORMATION_MESSAGE);
-        }
-    } catch (IllegalArgumentException ex) {
-        javax.swing.JOptionPane.showMessageDialog(this, ex.getMessage(), "Validation Error", javax.swing.JOptionPane.ERROR_MESSAGE);
-    } catch (Exception ex) {
-        javax.swing.JOptionPane.showMessageDialog(this, "An unexpected error occurred: " + ex.getMessage(), "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
-    }
-        
-        
-        
-        
+            // Show a message if no trains were found
+            if (trainDetails.isEmpty()) 
+            {
+                javax.swing.JOptionPane.showMessageDialog(this, "No trains found for the selected criteria.", "Info", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+            }
+        } 
+        catch (IllegalArgumentException ex) 
+        {
+            javax.swing.JOptionPane.showMessageDialog(this, ex.getMessage(), "Validation Error", javax.swing.JOptionPane.ERROR_MESSAGE);
+        } 
+        catch (Exception ex) 
+        {
+            javax.swing.JOptionPane.showMessageDialog(this, "An unexpected error occurred: " + ex.getMessage(), "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
+        }        
     }//GEN-LAST:event_btn_searchActionPerformed
 
     private void btn_bookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_bookActionPerformed
@@ -238,7 +241,6 @@ public class VSelectTrain extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(VSelectTrain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() 
         {
             public void run() 

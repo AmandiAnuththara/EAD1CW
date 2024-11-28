@@ -1,5 +1,4 @@
 package controller;
-import java.util.Date;
 import model.MBookingSeats;
 public class CBookingSeats 
 {

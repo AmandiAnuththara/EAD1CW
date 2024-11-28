@@ -1,6 +1,5 @@
 package model;
 import java.sql.*;
-import java.util.Date;
 public class MBookingSeats 
 {
 

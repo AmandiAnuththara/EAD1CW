@@ -284,6 +284,7 @@ public class VBookingSeats extends javax.swing.JFrame
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_bookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_bookActionPerformed
@@ -296,7 +297,8 @@ public class VBookingSeats extends javax.swing.JFrame
             
             // Format departure date to 'yyyy-MM-dd'
             Date selectedDate = date_exp_date.getDate();
-            if (selectedDate == null) {
+            if (selectedDate == null) 
+            {
                 throw new IllegalArgumentException("Please select a valid departure date.");
             }
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -307,7 +309,8 @@ public class VBookingSeats extends javax.swing.JFrame
             
             // Format departure date to 'yyyy-MM-dd'
             Date dob = date_dob.getDate();
-            if (selectedDate == null) {
+            if (selectedDate == null) 
+            {
                 throw new IllegalArgumentException("Please select a valid departure date.");
             }
             SimpleDateFormat dateFormat2 = new SimpleDateFormat("yyyy-MM-dd");
