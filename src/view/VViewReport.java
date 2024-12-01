@@ -87,7 +87,7 @@ public class VViewReport extends javax.swing.JFrame
             }
         });
     }
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_viewreport;
     private javax.swing.JLabel jLabel1;

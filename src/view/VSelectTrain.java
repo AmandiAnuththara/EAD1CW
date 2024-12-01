@@ -1,13 +1,12 @@
 package view;
-
 import controller.CSelectTrain;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-
-
-public class VSelectTrain extends javax.swing.JFrame {
-    public VSelectTrain() {
+public class VSelectTrain extends javax.swing.JFrame 
+{
+    public VSelectTrain() 
+    {
         initComponents();
     }
     @SuppressWarnings("unchecked")
@@ -213,7 +212,6 @@ public class VSelectTrain extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_searchActionPerformed
 
     private void btn_bookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_bookActionPerformed
-        // TODO add your handling code here:
         dispose();
         VBookingSeats booking = new VBookingSeats();
         booking.setVisible(true);

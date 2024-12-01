@@ -322,8 +322,7 @@ public class VBookingSeats extends javax.swing.JFrame
             
             String email = txt_email.getText().trim();
             String phoneNo = txt_phone.getText().trim();// Keep phoneNumber as String first to validate empty input
-            //
-
+            
             // Validate required fields
             if (idNumber.isEmpty() || lastName.isEmpty() || email.isEmpty() || phoneNo.isEmpty()) 
             {
@@ -368,7 +367,6 @@ public class VBookingSeats extends javax.swing.JFrame
     }//GEN-LAST:event_btn_bookActionPerformed
 
     private void txt_phoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_phoneActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txt_phoneActionPerformed
 
     public static void main(String args[]) 

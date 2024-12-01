@@ -1,12 +1,10 @@
 package controller;
-
 import model.MBookingSeats;
-
-public class CBookingSeats {
-
-    public void userDetails(String idType, String idNumber, String country, String expDate, String lastName, 
-                            String firstMiddleName, String dob, String email, String phoneNo) {
-        try {
+public class CBookingSeats 
+{
+    public void userDetails(String idType, String idNumber, String country, String expDate, String lastName, String firstMiddleName, String dob, String email, String phoneNo) {
+        try 
+        {
             // Validate inputs
             if (idType == null || idType.isEmpty() ||
                 idNumber == null || idNumber.isEmpty() ||
@@ -18,11 +16,13 @@ public class CBookingSeats {
                 throw new IllegalArgumentException("All fields must be filled out!");
             }
 
-            if (!email.contains("@")) {
+            if (!email.contains("@")) 
+            {
                 throw new IllegalArgumentException("Invalid email format.");
             }
 
-            if (!phoneNo.matches("\\d+")) {
+            if (!phoneNo.matches("\\d+")) 
+            {
                 throw new IllegalArgumentException("Phone number must contain only digits.");
             }
 
@@ -32,29 +32,34 @@ public class CBookingSeats {
 
             // Log success
             System.out.println("User details added successfully for ID number: " + idNumber);
-        } catch (IllegalArgumentException ex) {
+        } 
+        catch (IllegalArgumentException ex) 
+        {
             // Handle validation errors
             System.err.println("Validation Error: " + ex.getMessage());
-        } catch (Exception e) {
+        } 
+        catch (Exception e) 
+        {
             // Handle general errors
             System.err.println("Error while saving user details: " + e.getMessage());
         }
     }
-
-    public void bookingSeats(int bookingId, String bookingDate, int noOfPassengers, double totalAmount, 
-                             String bookingStatus, int scheduleId, int userId) {
-        try {
+    public void bookingSeats(int bookingId, String bookingDate, int noOfPassengers, double totalAmount, String bookingStatus, int scheduleId, int userId) {
+        try 
+        {
             // Validate inputs
-            if (bookingDate == null || bookingDate.isEmpty() ||
-                bookingStatus == null || bookingStatus.isEmpty()) {
+            if (bookingDate == null || bookingDate.isEmpty() || bookingStatus == null || bookingStatus.isEmpty()) 
+            {
                 throw new IllegalArgumentException("All fields must be filled out!");
             }
 
-            if (noOfPassengers <= 0) {
+            if (noOfPassengers <= 0) 
+            {
                 throw new IllegalArgumentException("Number of passengers must be greater than 0.");
             }
 
-            if (totalAmount <= 0) {
+            if (totalAmount <= 0) 
+            {
                 throw new IllegalArgumentException("Total amount must be greater than 0.");
             }
 
@@ -64,10 +69,14 @@ public class CBookingSeats {
 
             // Log success
             System.out.println("Seat booking successful for Booking ID: " + bookingId);
-        } catch (IllegalArgumentException ex) {
+        } 
+        catch (IllegalArgumentException ex) 
+        {
             // Handle validation errors
             System.err.println("Validation Error: " + ex.getMessage());
-        } catch (Exception e) {
+        } 
+        catch (Exception e) 
+        {
             // Handle general errors
             System.err.println("Error while booking seats: " + e.getMessage());
         }
