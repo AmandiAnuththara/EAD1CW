@@ -1,7 +1,6 @@
 package view;
 public class VViewReport extends javax.swing.JFrame 
-{
-    public VViewReport() 
+{    public VViewReport() 
     {
         initComponents();
     }
