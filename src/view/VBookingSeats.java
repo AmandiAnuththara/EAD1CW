@@ -4,9 +4,13 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 public class VBookingSeats extends javax.swing.JFrame 
 {
-    public VBookingSeats() 
+    public int Schedule_ID;
+    
+    public VBookingSeats(int ScheduleID) 
     {
+        
         initComponents();
+        this.Schedule_ID = ScheduleID;
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -342,7 +346,7 @@ public class VBookingSeats extends javax.swing.JFrame
          
             // Call the controller to book seats
             CBookingSeats bookingController = new CBookingSeats();
-            bookingController.bookingSeats(idType, idNumber, country, expirationDate, lastName, firstMiddleName,date_of_birth , email, phoneNo);
+            bookingController.userDetails(idType, idNumber, country, expirationDate, lastName, firstMiddleName,date_of_birth , email, phoneNo);
 
             // Show success message
             javax.swing.JOptionPane.showMessageDialog(this, "Booking completed successfully!", "Success", javax.swing.JOptionPane.INFORMATION_MESSAGE);
@@ -359,6 +363,8 @@ public class VBookingSeats extends javax.swing.JFrame
         {
             javax.swing.JOptionPane.showMessageDialog(this, "An unexpected error occurred: " + ex.getMessage(), "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
         }
+       
+       
     }//GEN-LAST:event_btn_bookActionPerformed
 
     private void txt_phoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_phoneActionPerformed

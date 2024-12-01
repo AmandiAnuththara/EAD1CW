@@ -4,7 +4,6 @@ import java.text.ParseException;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 public class CSelectTrain 
 {
     private final MSelectTrain model;
