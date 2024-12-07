@@ -67,4 +67,40 @@ public class MSelectTrain
         }
         return trainDetails;
     }
+    
+    public int getScheduleId(int trainNo) {
+    int scheduleId = -1;
+    Connection connection = null;
+    PreparedStatement ps = null;
+    ResultSet rs = null;
+
+    try {
+        // Connect to the database
+        connection = DBConnection.createDBConnection();
+
+        String query = "SELECT Schedule_ID FROM schedule WHERE Train_No = ?;";
+        ps = connection.prepareStatement(query);
+        ps.setInt(1, trainNo);
+
+        rs = ps.executeQuery();
+
+        if (rs.next()) {
+            scheduleId = rs.getInt("Schedule_ID");
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    } finally {
+        try {
+            if (rs != null) rs.close();
+            if (ps != null) ps.close();
+            if (connection != null) connection.close();
+        } catch (SQLException e) {
+            System.err.println("Error closing resources: " + e.getMessage());
+        }
+    }
+    return scheduleId;
+}
+
+    
+    
 }

@@ -10,7 +10,7 @@ public class EAD1CW
       MAddTrain maddTrain = new MAddTrain();
       CAddTrain caddTrain = new CAddTrain();
       
-      VBookingSeats vbookingSeats = new VBookingSeats();
+      VBookingSeats vbookingSeats = new VBookingSeats(0,"");
       MBookingSeats mbokingSeats = new MBookingSeats();
       CBookingSeats cbookingSeats = new CBookingSeats();
       

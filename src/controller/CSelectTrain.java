@@ -25,4 +25,9 @@ public class CSelectTrain
         }
         return null;
     }
+    
+    public int getScheduleId(int trainNo) {
+        return model.getScheduleId(trainNo);
+    }
+
 }

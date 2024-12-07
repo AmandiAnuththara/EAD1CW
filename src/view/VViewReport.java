@@ -1,4 +1,8 @@
 package view;
+import java.util.List;
+import model.MViewReport;
+import model.train_bookings;
+
 public class VViewReport extends javax.swing.JFrame 
 {    public VViewReport() 
     {
@@ -54,7 +58,13 @@ public class VViewReport extends javax.swing.JFrame
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_viewreportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_viewreportActionPerformed
-       
+       MViewReport model = new MViewReport();
+        List<train_bookings> bookings = model.getBookingDetails();
+
+        // Example: Print data to console (you can replace this with table population or other UI updates)
+        for (train_bookings booking : bookings) {
+            System.out.println(booking);
+        }
     }//GEN-LAST:event_btn_viewreportActionPerformed
     public static void main(String args[]) 
     {

@@ -2,7 +2,8 @@ package controller;
 import model.MBookingSeats;
 public class CBookingSeats 
 {
-    public void userDetails(String idType, String idNumber, String country, String expDate, String lastName, String firstMiddleName, String dob, String email, String phoneNo) {
+    int User_ID = 0;
+    public int userDetails(String idType, String idNumber, String country, String expDate, String lastName, String firstMiddleName, String dob, String email, String phoneNo,int Schedule_ID) {
         try 
         {
             // Validate inputs
@@ -28,10 +29,13 @@ public class CBookingSeats
 
             // Delegate to the model
             MBookingSeats mBookingSeats = new MBookingSeats();
-            mBookingSeats.userDetails(idType, idNumber, country, expDate, lastName, firstMiddleName, dob, email, phoneNo);
+            User_ID = mBookingSeats.userDetails(idType, idNumber, country, expDate, lastName, firstMiddleName, dob, email, phoneNo,Schedule_ID);
 
+            
             // Log success
             System.out.println("User details added successfully for ID number: " + idNumber);
+            
+            
         } 
         catch (IllegalArgumentException ex) 
         {
@@ -43,12 +47,13 @@ public class CBookingSeats
             // Handle general errors
             System.err.println("Error while saving user details: " + e.getMessage());
         }
+        return User_ID;
     }
-    public void bookingSeats(int bookingId, String bookingDate, int noOfPassengers, double totalAmount, String bookingStatus, int scheduleId, int userId) {
+    public void bookingSeats( String bookingDate, int noOfPassengers, int scheduleId, int userId) {
         try 
         {
             // Validate inputs
-            if (bookingDate == null || bookingDate.isEmpty() || bookingStatus == null || bookingStatus.isEmpty()) 
+            if (bookingDate == null || bookingDate.isEmpty() ) 
             {
                 throw new IllegalArgumentException("All fields must be filled out!");
             }
@@ -58,17 +63,13 @@ public class CBookingSeats
                 throw new IllegalArgumentException("Number of passengers must be greater than 0.");
             }
 
-            if (totalAmount <= 0) 
-            {
-                throw new IllegalArgumentException("Total amount must be greater than 0.");
-            }
+            
 
             // Delegate to the model
             MBookingSeats mBookingSeats = new MBookingSeats();
-            mBookingSeats.bookingSeats(bookingId, bookingDate, noOfPassengers, totalAmount, bookingStatus, scheduleId, userId);
+            mBookingSeats.bookingSeats( bookingDate, noOfPassengers, scheduleId, userId);
 
-            // Log success
-            System.out.println("Seat booking successful for Booking ID: " + bookingId);
+            
         } 
         catch (IllegalArgumentException ex) 
         {
@@ -81,4 +82,10 @@ public class CBookingSeats
             System.err.println("Error while booking seats: " + e.getMessage());
         }
     }
+    
+    public Object[] getTrainDetails(int scheduleId) {
+        MBookingSeats mBookingSeats = new MBookingSeats();
+        return mBookingSeats.getTrainDetailsByScheduleId(scheduleId);
+    }
+
 }

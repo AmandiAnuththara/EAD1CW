@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 public class VSelectTrain extends javax.swing.JFrame 
 {
+    String Departure_Date = "";
     public VSelectTrain() 
     {
         initComponents();
@@ -175,13 +176,15 @@ public class VSelectTrain extends javax.swing.JFrame
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         String departureDate = dateFormat.format(selectedDate);
         
+        Departure_Date = departureDate;
+        
         try 
         {
             CSelectTrain controller = new CSelectTrain();
             List<Object[]> trainDetails = controller.getTrainDetails(From,To,departureDate);
         
             // Define column names for the table
-            String[] columnNames = {"Train Number", "Travel Time", "Departure Date", "Departure Time", "Arrival Time", "Travel Cost"};
+            String[] columnNames = {"Train Number", "Travel Time", "Departure Date", "Departure Time", "Arrival Time", "Travel Cost","Select"};
 
             // Create a table model with the train details
             javax.swing.table.DefaultTableModel tableModel = new javax.swing.table.DefaultTableModel(columnNames, 0);
@@ -212,9 +215,40 @@ public class VSelectTrain extends javax.swing.JFrame
     }//GEN-LAST:event_btn_searchActionPerformed
 
     private void btn_bookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_bookActionPerformed
-        dispose();
-        VBookingSeats booking = new VBookingSeats();
-        booking.setVisible(true);
+        // Check if a row is selected in the table
+    int selectedRow = table.getSelectedRow();
+    
+    if (selectedRow == -1) {
+        // Show an error message if no train is selected
+        javax.swing.JOptionPane.showMessageDialog(this, "Please select a train to proceed.", "No Selection", javax.swing.JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+
+    try {
+        // Get the Train_No from the selected row (assuming it's in column 0)
+        int trainNo = Integer.parseInt(table.getValueAt(selectedRow, 0).toString());
+
+        // Fetch the schedule_id using the controller
+        CSelectTrain controller = new CSelectTrain();
+        int scheduleId = controller.getScheduleId(trainNo);
+
+        if (scheduleId == -1) {
+            // If no schedule_id is found, display an error
+            javax.swing.JOptionPane.showMessageDialog(this, "Failed to retrieve schedule details for the selected train.", "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        // Proceed to VBookingSeats and pass the schedule_id
+        dispose(); // Close the current window
+        VBookingSeats booking = new VBookingSeats(scheduleId,Departure_Date); // Pass schedule_id to the booking screen
+        booking.setVisible(true); // Show the booking screen
+    } catch (NumberFormatException ex) {
+        // Handle any parsing errors
+        javax.swing.JOptionPane.showMessageDialog(this, "Invalid train number selected.", "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
+    } catch (Exception ex) {
+        // Handle any unexpected errors
+        javax.swing.JOptionPane.showMessageDialog(this, "An unexpected error occurred: " + ex.getMessage(), "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
+    }
     }//GEN-LAST:event_btn_bookActionPerformed
 
     public static void main(String args[]) {
