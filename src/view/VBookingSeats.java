@@ -1,5 +1,6 @@
 package view;
 import controller.*;
+import ead1cw.MainWindow;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 public class VBookingSeats extends javax.swing.JFrame 
@@ -73,8 +74,11 @@ public class VBookingSeats extends javax.swing.JFrame
         btn_book = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
         lbl_train_details = new javax.swing.JLabel();
+        btn_back = new javax.swing.JButton();
+        jLabel15 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLayeredPane1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -220,6 +224,8 @@ public class VBookingSeats extends javax.swing.JFrame
                 .addGap(7, 7, 7))
         );
 
+        getContentPane().add(jLayeredPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 6, -1, 292));
+
         jLayeredPane2.setBackground(new java.awt.Color(204, 255, 255));
         jLayeredPane2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -294,6 +300,8 @@ public class VBookingSeats extends javax.swing.JFrame
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
+        getContentPane().add(jLayeredPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 304, -1, -1));
+
         btn_book.setBackground(new java.awt.Color(102, 102, 255));
         btn_book.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btn_book.setForeground(new java.awt.Color(255, 255, 255));
@@ -303,56 +311,30 @@ public class VBookingSeats extends javax.swing.JFrame
                 btn_bookActionPerformed(evt);
             }
         });
+        getContentPane().add(btn_book, new org.netbeans.lib.awtextra.AbsoluteConstraints(537, 383, 157, -1));
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel14.setText("Train Details");
         jLabel14.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(502, 23, 208, -1));
 
         lbl_train_details.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         lbl_train_details.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        getContentPane().add(lbl_train_details, new org.netbeans.lib.awtextra.AbsoluteConstraints(502, 49, 208, 249));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbl_train_details, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(14, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLayeredPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn_book, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 34, 34))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLayeredPane1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(jLabel14)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lbl_train_details, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLayeredPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btn_book)
-                        .addGap(15, 15, 15))))
-        );
+        btn_back.setBackground(new java.awt.Color(102, 102, 255));
+        btn_back.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btn_back.setForeground(new java.awt.Color(255, 255, 255));
+        btn_back.setText("Back");
+        btn_back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_backActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_back, new org.netbeans.lib.awtextra.AbsoluteConstraints(646, 433, -1, 24));
+
+        jLabel15.setIcon(new javax.swing.ImageIcon("C:\\Users\\hp\\Downloads\\Untitled design.png")); // NOI18N
+        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -4, 730, 470));
 
         pack();
         setLocationRelativeTo(null);
@@ -440,6 +422,12 @@ public class VBookingSeats extends javax.swing.JFrame
     private void txt_phoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_phoneActionPerformed
     }//GEN-LAST:event_txt_phoneActionPerformed
 
+    private void btn_backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_backActionPerformed
+        MainWindow report = new MainWindow();
+        report.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_backActionPerformed
+
     public static void main(String args[]) 
     {
       //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -473,6 +461,7 @@ public class VBookingSeats extends javax.swing.JFrame
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_back;
     private javax.swing.JButton btn_book;
     private javax.swing.JComboBox<String> cmb_country;
     private javax.swing.JComboBox<String> cmb_id;
@@ -484,6 +473,7 @@ public class VBookingSeats extends javax.swing.JFrame
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
